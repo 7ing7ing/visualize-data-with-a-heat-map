@@ -160,7 +160,9 @@ req.onload = function () {
     .attr("fill", (d) => {
       const variance = d.variance;
       const temp = baseTemp + variance;
-      if (temp >= 2.8 && temp < 3.9) {
+      if (temp < 2.8) {
+        return "rgb(49, 54, 149)";
+      } else if (temp >= 2.8 && temp < 3.9) {
         return "rgb(69 117 180)";
       } else if (temp >= 3.9 && temp < 5.0) {
         return "rgb(116 173 209)";
@@ -176,8 +178,10 @@ req.onload = function () {
         return "rgb(253 174 97)";
       } else if (temp >= 10.6 && temp < 11.7) {
         return "rgb(244 109 67)";
-      } else if (temp >= 11.7 && temp <= 12.8) {
+      } else if (temp >= 11.7 && temp < 12.8) {
         return "rgb(215 48 39)";
+      } else if (temp > 12.8) {
+        return "rgb(165, 0, 38)";
       }
     })
     .on("mouseover", function (evt, d) {
@@ -196,7 +200,6 @@ req.onload = function () {
       tooltip.style("position", "absolute");
       tooltip.style("left", evt.pageX + 20 + "px");
       tooltip.style("top", evt.pageY + "px");
-      tooltip.attr("data-year", d.year);
     })
     .on("mouseout", function () {
       tooltip.transition().duration(400).style("opacity", 0);

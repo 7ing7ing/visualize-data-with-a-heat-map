@@ -22,8 +22,9 @@ svg {
 
 #tooltip {
   padding: 4px;
-  background: #c8c6c6;
+  background: #2c394b;
   border: 0px;
   border-radius: 8px;
   text-align: center;
+  color: white;
 }
