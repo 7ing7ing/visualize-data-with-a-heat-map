@@ -1,0 +1,29 @@
+body {
+  font-family: "Lato", sans-serif;
+}
+
+h1 {
+  line-height: 1;
+}
+
+h2 {
+  line-height: 1;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+svg {
+  display: block;
+  margin: auto;
+}
+
+#tooltip {
+  padding: 4px;
+  background: #c8c6c6;
+  border: 0px;
+  border-radius: 8px;
+  text-align: center;
+}
