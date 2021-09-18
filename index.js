@@ -151,7 +151,7 @@ req.onload = function () {
     .append("rect")
     .attr("x", (d, i) => xScale(years[i]))
     .attr("y", (d) => yScale(d.month))
-    .attr("width", "5")
+    .attr("width", "3.7")
     .attr("height", "30")
     .attr("class", "cell")
     .attr("data-month", (d) => d.month - 1)
@@ -186,6 +186,11 @@ req.onload = function () {
     })
     .on("mouseover", function (evt, d) {
       tooltip.transition().duration(200).style("opacity", 0.9);
+      d3.select(this)
+        .attr("stroke", "black")
+        .attr("stroke-width", 1.5)
+        .attr("stroke-opacity", 0.9);
+
       tooltip.html(
         d.year +
           " - " +
@@ -203,5 +208,6 @@ req.onload = function () {
     })
     .on("mouseout", function () {
       tooltip.transition().duration(400).style("opacity", 0);
+      d3.select(this).attr("stroke-opacity", "0");
     });
 };
